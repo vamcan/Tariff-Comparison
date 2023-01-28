@@ -4,6 +4,6 @@ namespace TariffComparison.Core.Domain.Contracts.Repository
 {
     public interface IProductRepository
     {
-        public Task<IList<IProduct>> GetAllAsync();
+        public Task<List<IProduct>> GetAllAsync();
     }
 }
