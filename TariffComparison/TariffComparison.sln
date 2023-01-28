@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33209.295
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{9F1F0934-335D-4C85-B33D-CD6D2B6A874A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A8651528-3496-495B-88E8-5CF256F6A4D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Core.Domain", "TariffComparison.Core.Domain\TariffComparison.Core.Domain.csproj", "{1EA8D10D-2700-4103-8CDC-EA203BD2C5BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EA8D10D-2700-4103-8CDC-EA203BD2C5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA8D10D-2700-4103-8CDC-EA203BD2C5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA8D10D-2700-4103-8CDC-EA203BD2C5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA8D10D-2700-4103-8CDC-EA203BD2C5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1EA8D10D-2700-4103-8CDC-EA203BD2C5BC} = {9F1F0934-335D-4C85-B33D-CD6D2B6A874A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47A331C9-861F-492C-9B74-6009C4E89F17}
+	EndGlobalSection
+EndGlobal
