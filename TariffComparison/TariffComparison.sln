@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Core.Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Infrastructure.Persistence", "TariffComparison.Infrastructure.Persistence\TariffComparison.Infrastructure.Persistence.csproj", "{7D698081-A115-4300-980A-E353915F452B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Web.Api", "TariffComparison.Web.Api\TariffComparison.Web.Api.csproj", "{B5C8092B-5C80-4704-9368-509E46B9B4BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{7D698081-A115-4300-980A-E353915F452B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D698081-A115-4300-980A-E353915F452B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D698081-A115-4300-980A-E353915F452B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C8092B-5C80-4704-9368-509E46B9B4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C8092B-5C80-4704-9368-509E46B9B4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C8092B-5C80-4704-9368-509E46B9B4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C8092B-5C80-4704-9368-509E46B9B4BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{1EA8D10D-2700-4103-8CDC-EA203BD2C5BC} = {9F1F0934-335D-4C85-B33D-CD6D2B6A874A}
 		{38A39DB4-E98B-4FE3-8826-5640FB81899B} = {9F1F0934-335D-4C85-B33D-CD6D2B6A874A}
 		{7D698081-A115-4300-980A-E353915F452B} = {9F1F0934-335D-4C85-B33D-CD6D2B6A874A}
+		{B5C8092B-5C80-4704-9368-509E46B9B4BE} = {9F1F0934-335D-4C85-B33D-CD6D2B6A874A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47A331C9-861F-492C-9B74-6009C4E89F17}
