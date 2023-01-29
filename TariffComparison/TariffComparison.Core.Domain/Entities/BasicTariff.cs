@@ -1,4 +1,5 @@
 ﻿using TariffComparison.Core.Domain.Base;
+using TariffComparison.Core.Domain.Base.Exceptions;
 using TariffComparison.Core.Domain.ValueObjects;
 
 namespace TariffComparison.Core.Domain.Entities
@@ -22,6 +23,18 @@ namespace TariffComparison.Core.Domain.Entities
 
         public static BasicTariff Create(string name, Money baseCostPerMonth, Money consumptionCostPerKWh)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new DomainStateException("Name cannot be null or empty.");
+            }
+            if (baseCostPerMonth== null)
+            {
+                throw new ArgumentException("baseCostPerMonth cannot be null");
+            }
+            if (consumptionCostPerKWh== null)
+            {
+                throw new ArgumentException("consumptionCostPerKWh cannot be null");
+            }
             var basicTariff = new BasicTariff
             {
                 Id = Guid.NewGuid(),

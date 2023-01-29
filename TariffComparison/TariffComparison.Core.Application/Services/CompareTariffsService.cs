@@ -12,6 +12,10 @@ namespace TariffComparison.Core.Application.Services
     {
         public IEnumerable<TariffComparisonDto> CompareTariffs(IEnumerable<IProduct> products, decimal consumption)
         {
+            if (consumption<0)
+            {
+                throw new ArgumentOutOfRangeException("consumption cannot be Negative");
+            }
             return products.Select(tariff => new TariffComparisonDto
             {
                 TariffName = tariff.Name,

@@ -1,4 +1,5 @@
 ﻿using TariffComparison.Core.Domain.Base;
+using TariffComparison.Core.Domain.Base.Exceptions;
 using TariffComparison.Core.Domain.ValueObjects;
 
 namespace TariffComparison.Core.Domain.Entities
@@ -27,6 +28,18 @@ namespace TariffComparison.Core.Domain.Entities
         }
         public static PackagedTariff Create(string name, Money baseCost, Money additionalCostPerKWh, int threshold)
         {
+            if (string.IsNullOrEmpty(name))
+                throw new DomainStateException("Name cannot be null or empty.");
+
+            if (baseCost == null)
+                throw new DomainStateException("baseCost cannot be null");
+
+            if (additionalCostPerKWh == null)
+                throw new DomainStateException("additionalCostPerKWh cannot be null");
+
+            if (threshold <= 0)
+                throw new DomainStateException("Threshold must be greater than zero.");
+
             var packagedTariff = new PackagedTariff
             {
                 Id = Guid.NewGuid(),

@@ -29,7 +29,6 @@ namespace TariffComparison.Core.Application.Tariff.CompareTariffs
             {
                 return OperationResult<List<TariffComparisonDto>>.FailureResult(e.Message);
             }
-
         }
     }
 }
