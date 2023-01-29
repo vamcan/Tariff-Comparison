@@ -26,15 +26,7 @@ namespace TariffComparison.Core.Domain.ValueObjects
             Value = value;
         }
 
-        public Money Increase(Money value)
-        {
-            return new Money(Value + value.Value);
-        } 
-        public Money Decrease(Money value)
-        {
-            return new Money(Value - value.Value);
-        }
-
+       
         public static Money operator +(Money left, Money right)
         {
             return new Money(left.Value + right.Value);

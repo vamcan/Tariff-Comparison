@@ -20,36 +20,7 @@ namespace TariffComparison.Tests.ValueObjects
             Assert.Equal("The amount cannot be negative", exception.Message);
         }
 
-        [Fact]
-        public void Money_Increase_ShouldReturnNewInstanceWithIncreasedAmount()
-        {
-            // Arrange
-            Money money = new Money(100);
-            Money increaseAmount = new Money(50);
-
-            // Act
-            Money increasedMoney = money.Increase(increaseAmount);
-
-            // Assert
-            Assert.NotEqual(money, increasedMoney);
-            Assert.Equal(150, increasedMoney.Value);
-        }
-
-        [Fact]
-        public void Money_Decrease_ShouldReturnNewInstanceWithDecreasedAmount()
-        {
-            // Arrange
-            Money money = new Money(100);
-            Money decreaseAmount = new Money(50);
-
-            // Act
-            Money decreasedMoney = money.Decrease(decreaseAmount);
-
-            // Assert
-            Assert.NotEqual(money, decreasedMoney);
-            Assert.Equal(50, decreasedMoney.Value);
-        }
-
+     
         [Fact]
         public void Money_AdditionOperator_ShouldReturnNewInstanceWithSumAmount()
         {
@@ -81,20 +52,7 @@ namespace TariffComparison.Tests.ValueObjects
             Assert.NotEqual(money2, subtractedMoney);
             Assert.Equal(60, subtractedMoney.Value);
         }
-        [Fact]
-        public void Test_Decrease_Method_Returns_Expected_Result()
-        {
-            // Arrange
-            Money money1 = new Money(20);
-            Money money2 = new Money(10);
-
-            // Act
-            Money result = money1.Decrease(money2);
-
-            // Assert
-            Assert.Equal(10, result.Value);
-        }
-
+     
         [Fact]
         public void Test_Addition_Operator_Returns_Expected_Result()
         {
