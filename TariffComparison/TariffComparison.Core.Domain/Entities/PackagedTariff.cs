@@ -35,7 +35,7 @@ namespace TariffComparison.Core.Domain.Entities
                 throw new DomainStateException("baseCost cannot be null");
 
             if (additionalCostPerKWh == null)
-                throw new DomainStateException("additionalCostPerKWh cannot be null");
+                throw new DomainStateException("additional Cost Per KWh cannot be null");
 
             if (threshold <= 0)
                 throw new DomainStateException("Threshold must be greater than zero.");

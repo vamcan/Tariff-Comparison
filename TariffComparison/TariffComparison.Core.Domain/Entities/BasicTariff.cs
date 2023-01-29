@@ -29,11 +29,11 @@ namespace TariffComparison.Core.Domain.Entities
             }
             if (baseCostPerMonth== null)
             {
-                throw new ArgumentException("baseCostPerMonth cannot be null");
+                throw new ArgumentException("base Cost Per Month cannot be null");
             }
             if (consumptionCostPerKWh== null)
             {
-                throw new ArgumentException("consumptionCostPerKWh cannot be null");
+                throw new ArgumentException("consumption Cost Per KWh cannot be null");
             }
             var basicTariff = new BasicTariff
             {

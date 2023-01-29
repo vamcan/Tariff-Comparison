@@ -75,7 +75,7 @@ namespace TariffComparison.Tests.Domain
                 PackagedTariff.Create(name, baseCost, additionalCostPerKWh, threshold));
 
             // Assert
-            Assert.Equal("additionalCostPerKWh cannot be null", ex.Message);
+            Assert.Equal("additional Cost Per KWh cannot be null", ex.Message);
         }
 
         [Fact]
