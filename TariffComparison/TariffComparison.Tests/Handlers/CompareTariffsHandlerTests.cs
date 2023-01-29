@@ -64,7 +64,66 @@ namespace TariffComparison.Tests.Handlers
 
             // Assert
             Assert.False(result.IsSuccess);
+            Assert.True(result.IsException);
             Assert.Equal(expectedExceptionMessage, result.ErrorMessage);
         }
+        [Fact]
+        public async Task Handle_Should_Return_NotFoundResult_When_Products_Are_Not_Found()
+        {
+            // Arrange
+            var request = new CompareTariffsRequest { Consumption = 3500 };
+            var expectedErrorMessage = "Products not found!";
+            _productRepositoryMock.Setup(x => x.GetAllAsync())
+                .ReturnsAsync(new List<IProduct>());
+
+            // Act
+            var result = await _compareTariffsHandler.Handle(request, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.IsSuccess);
+            Assert.True(result.IsNotFound);
+            Assert.Equal(expectedErrorMessage, result.ErrorMessage);
+        }
+        [Fact]
+        public async Task Handle_Should_Invoke_GetAllAsync_Method_Of_ProductRepository()
+        {
+            // Arrange
+            var request = new CompareTariffsRequest { Consumption = 3500 };
+            _productRepositoryMock.Setup(x => x.GetAllAsync())
+                .ReturnsAsync(new List<IProduct>
+                {
+                    BasicTariff.Create("basic electricity tariff",new Money(5),new Money(new decimal(0.22))),
+                    PackagedTariff.Create("Packaged tariff",new Money(800),new Money(new decimal(0.30)),4000)
+                });
+
+            // Act
+            await _compareTariffsHandler.Handle(request, CancellationToken.None);
+
+            // Assert
+            _productRepositoryMock.Verify(x => x.GetAllAsync(), Times.Once);
+        }
+        [Fact]
+        public async Task Handle_Should_Return_FailureResult_When_TariffComparison_Fails()
+        {
+            // Arrange
+            var request = new CompareTariffsRequest { Consumption = 3500 };
+            var expectedExceptionMessage = "Tariff Comparison Failed";
+            _productRepositoryMock.Setup(x => x.GetAllAsync())
+                .ReturnsAsync(new List<IProduct>
+                {
+                    BasicTariff.Create("basic electricity tariff",new Money(5),new Money(new decimal(0.22))),
+                    PackagedTariff.Create("Packaged tariff",new Money(800),new Money(new decimal(0.30)),4000)
+                });
+            _compareTariffsServiceMock.Setup(x => x.CompareTariffs(It.IsAny<IEnumerable<IProduct>>(), request.Consumption))
+                .Throws(new Exception(expectedExceptionMessage));
+
+            // Act
+            var result = await _compareTariffsHandler.Handle(request, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.IsSuccess);
+            Assert.Equal(expectedExceptionMessage, result.ErrorMessage);
+        }
+
     }
 }

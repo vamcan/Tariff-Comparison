@@ -36,7 +36,7 @@ namespace TariffComparison.Tests.Base
             Assert.False(result.IsSuccess);
             Assert.Equal(expectedErrorMessage, result.ErrorMessage);
             Assert.Equal(expectedResult, result.Result);
-            Assert.False(result.IsException);
+            Assert.True(result.IsException);
             Assert.False(result.IsNotFound);
         }
 
@@ -53,7 +53,7 @@ namespace TariffComparison.Tests.Base
             Assert.False(result.IsSuccess);
             Assert.Equal(expectedErrorMessage, result.ErrorMessage);
             Assert.Equal(default, result.Result);
-            Assert.False(result.IsException);
+            Assert.True(result.IsException);
             Assert.True(result.IsNotFound);
         }
     }

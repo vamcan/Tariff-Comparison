@@ -22,6 +22,10 @@ namespace TariffComparison.Core.Application.Tariff.CompareTariffs
             try
             {
                 var products = await _productRepository.GetAllAsync();
+                if (!products.Any())
+                {
+                    return OperationResult<List<TariffComparisonDto>>.NotFoundResult("Products not found!");
+                }
                 var result = _compareTariffsService.CompareTariffs(products, request.Consumption).ToList();
                 return OperationResult<List<TariffComparisonDto>>.SuccessResult(result);
             }
