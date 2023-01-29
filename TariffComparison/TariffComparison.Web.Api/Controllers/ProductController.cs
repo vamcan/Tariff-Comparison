@@ -16,6 +16,7 @@ namespace TariffComparison.Web.Api.Controllers
         }
 
         [HttpGet("GetCompareTariffs")]
+
         public async Task<IActionResult> GetCompareTariffs(decimal consumption)
         {
             var request = new CompareTariffsRequest() { Consumption = consumption };

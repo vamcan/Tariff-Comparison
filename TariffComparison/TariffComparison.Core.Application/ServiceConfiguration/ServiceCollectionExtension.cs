@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using MediatR;
-using TariffComparison.Core.Domain.Services;
+using TariffComparison.Core.Application.Services;
 
 namespace TariffComparison.Core.Application.ServiceConfiguration
 {

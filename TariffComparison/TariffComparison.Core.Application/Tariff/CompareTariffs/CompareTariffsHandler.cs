@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using TariffComparison.Core.Application.Base.Common;
+using TariffComparison.Core.Application.Services;
 using TariffComparison.Core.Domain.Contracts.Repository;
 using TariffComparison.Core.Domain.Dto;
-using TariffComparison.Core.Domain.Services;
 
 namespace TariffComparison.Core.Application.Tariff.CompareTariffs
 {

@@ -1,7 +1,7 @@
 ﻿using TariffComparison.Core.Domain.Base;
 using TariffComparison.Core.Domain.Dto;
 
-namespace TariffComparison.Core.Domain.Services
+namespace TariffComparison.Core.Application.Services
 {
     public interface ICompareTariffsService
     {
