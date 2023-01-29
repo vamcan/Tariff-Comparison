@@ -4,7 +4,7 @@ using TariffComparison.Core.Domain.ValueObjects;
 
 namespace TariffComparison.Core.Domain.Entities
 {
-    public class PackagedTariff : IBaseEntity, IProduct, IAggregateRoot
+    public class PackagedTariff : IProduct, IAggregateRoot
     {
         private PackagedTariff()
         {
