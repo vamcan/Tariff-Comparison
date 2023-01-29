@@ -30,8 +30,8 @@ namespace TariffComparison.Tests.Handlers
             var request = new CompareTariffsRequest { Consumption = 3500 };
             var expectedTariffComparisonDtoList = new List<TariffComparisonDto>
             {
-                new TariffComparisonDto { TariffName = "Tariff A", AnnnualCost = 830 },
-                new TariffComparisonDto { TariffName = "Tariff B", AnnnualCost = 800 }
+                new TariffComparisonDto { TariffName = "basic electricity tariff", AnnnualCost = 830 },
+                new TariffComparisonDto { TariffName = "Packaged tariff", AnnnualCost = 800 }
             };
             _productRepositoryMock.Setup(x => x.GetAllAsync())
             .ReturnsAsync(new List<IProduct>
