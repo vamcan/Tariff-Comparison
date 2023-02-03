@@ -12,11 +12,10 @@ namespace TariffComparison.Core.Domain.Entities
         }
         public Guid Id { get; private init; }
         public string Name { get; private init; }
-        public Money BaseCost { get; set; }
-        public Money AdditionalCostPerKWh { get; set; }
-        public int Threshold { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Modified { get; set; }
+        public Money BaseCost { get; private set; }
+        public Money AdditionalCostPerKWh { get; private set; }
+        public int Threshold { get; private set; }
+       
 
         public decimal GetAnnualCost(decimal consumption)
         {

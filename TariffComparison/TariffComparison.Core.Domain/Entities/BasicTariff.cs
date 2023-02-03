@@ -14,8 +14,7 @@ namespace TariffComparison.Core.Domain.Entities
         public string Name { get; private init; }
         public Money BaseCostPerMonth { get; private init; }
         public Money ConsumptionCostPerKWh { get; private init; }
-        public DateTime Created { get; set; }
-        public DateTime Modified { get; set; }
+    
         public decimal GetAnnualCost(decimal consumption)
         {
             return (BaseCostPerMonth.Value * 12) + (consumption * ConsumptionCostPerKWh.Value);
