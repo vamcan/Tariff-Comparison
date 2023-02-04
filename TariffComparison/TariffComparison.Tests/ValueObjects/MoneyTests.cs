@@ -30,7 +30,7 @@ namespace TariffComparison.Tests.ValueObjects
 
             // Act
             Money sumMoney = money1 + money2;
-
+             
             // Assert
             Assert.NotEqual(money1, sumMoney);
             Assert.NotEqual(money2, sumMoney);
