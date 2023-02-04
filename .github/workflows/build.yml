@@ -43,6 +43,6 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"vamcan_Tariff-Comparison" /o:"vamcan" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build --no-incremental
-          dotnet test --collect "Code Coverage"
+          dotnet build --configuration Release
+          dotnet-coverage collect 'dotnet test' -f xml -o 'coverage.xml'
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
