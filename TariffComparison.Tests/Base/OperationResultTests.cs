@@ -27,15 +27,14 @@ namespace TariffComparison.Tests.Base
         {
             // Arrange
             var expectedErrorMessage = "test error message";
-            var expectedResult = "test result";
+           
 
             // Act
-            var result = OperationResult<string>.FailureResult(expectedErrorMessage, expectedResult);
+            var result = OperationResult<string>.FailureResult(expectedErrorMessage);
 
             // Assert
             Assert.False(result.IsSuccess);
             Assert.Equal(expectedErrorMessage, result.ErrorMessage);
-            Assert.Equal(expectedResult, result.Result);
             Assert.True(result.IsException);
             Assert.False(result.IsNotFound);
         }

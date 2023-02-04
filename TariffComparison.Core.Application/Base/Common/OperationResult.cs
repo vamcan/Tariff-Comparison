@@ -12,9 +12,9 @@
             return new OperationResult<TResult>{Result = result,IsSuccess = true};
         } 
 
-        public static OperationResult<TResult> FailureResult(string message,TResult result)
+        public static OperationResult<TResult> FailureResult(string message)
         {
-            return new OperationResult<TResult>{Result = result,ErrorMessage = message,IsSuccess = false,IsException = true};
+            return new OperationResult<TResult>{ErrorMessage = message,IsSuccess = false,IsException = true};
         }
 
         public static OperationResult<TResult> NotFoundResult(string message)
